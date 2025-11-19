@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pengajuan Website - Official By Liviaaa</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f9fb;
+    --card:#ffffff;
+    --accent:#0b63c6;
+    --muted:#6b7280;
+    --radius:12px;
+    --input-border:#e6e9ee;
+  }
+  *{box-sizing:border-box;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  body{margin:0;background:linear-gradient(180deg,#f7fbff 0%,var(--bg) 100%);color:#0f1724;padding:18px}
+  .container{max-width:720px;margin:0 auto}
+  header{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+  header img{width:56px;height:56px;border-radius:10px;object-fit:cover;box-shadow:0 6px 18px rgba(11,99,198,0.08)}
+  header h1{font-size:18px;margin:0}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,23,50,0.06);padding:18px;margin-bottom:18px}
+  label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+  input[type=text], input[type=tel], input[type=number], textarea, select{
+    width:100%;padding:12px 14px;border:1px solid var(--input-border);border-radius:10px;background:#fff;font-size:15px;color:#0b1220;
+    outline:none;box-shadow:none;
+  }
+  textarea{min-height:100px;resize:vertical}
+  .row{display:flex;gap:12px}
+  .col{flex:1}
+  .small{width:120px}
+  .prices{display:flex;gap:10px;margin-top:8px}
+  .price-btn{
+    flex:1;padding:10px;border-radius:10px;border:1px solid var(--input-border);display:flex;align-items:center;justify-content:center;cursor:pointer;
+    background:#fff;font-weight:600;
+  }
+  .price-btn input{margin-right:8px}
+  .muted-note{font-size:13px;color:var(--muted);margin-top:8px}
+  .actions{display:flex;gap:10px;align-items:center;margin-top:14px}
+  .btn-primary{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+  .btn-secondary{background:transparent;color:var(--accent);padding:10px 14px;border-radius:10px;border:1px solid var(--accent);cursor:pointer}
+  .summary{background:linear-gradient(180deg,#fbfdff,#ffffff);padding:14px;border-radius:10px;border:1px dashed #e6eefc;margin-top:12px}
+  .checkbox{display:flex;gap:10px;align-items:flex-start;margin-top:12px}
+  .checkbox input{transform:scale(1.1);margin-top:4px}
+  .footer-note{font-size:13px;color:var(--muted);margin-top:12px}
+  @media (max-width:520px){
+    .row{flex-direction:column}
+    .small{width:100%}
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Gambar contoh (path lokal) -->
+      <img src="/mnt/data/6FAF4702-D928-4B51-B221-57BC654BFD48.jpeg" alt="logo contoh">
+      <div>
+        <h1>Pengajuan Website — Toko Web </h1>
+        <div style="font-size:13px;color:var(--muted)">Isi form di bawah untuk memesan website online — cepat & ringkas.</div>
+      </div>
+    </header>
+
+    <form id="orderForm" class="card" onsubmit="return handleSubmit(event)">
+      <div style="margin-bottom:12px">
+        <label>Sudah memiliki website?</label>
+        <label style="display:flex;gap:8px;align-items:center"><input type="radio" name="hasWebsite" value="ya"> Sudah</label>
+        <label style="display:flex;gap:8px;align-items:center"><input type="radio" name="hasWebsite" value="tidak" checked> Belum</label>
+      </div>
+
+      <div class="row" style="margin-bottom:10px">
+        <div class="col">
+          <label for="siteName">Nama web / Nama toko</label>
+          <input id="siteName" name="siteName" type="text" placeholder="Contoh: Toko Ilham" required>
+        </div>
+        <div class="col small">
+          <label for="city">Kota Domisili</label>
+          <input id="city" name="city" type="text" placeholder="Kota" required>
+        </div>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label for="address">Alamat (opsional)</label>
+        <textarea id="address" name="address" placeholder="Alamat toko / detail tambahan..."></textarea>
+      </div>
+
+      <div class="row" style="margin-bottom:10px">
+        <div class="col">
+          <label for="photos">Jumlah foto yang diinginkan</label>
+          <input id="photos" name="photos" type="number" min="1" max="50" value="5" required>
+          <div class="muted-note">Masukkan jumlah foto (mis. 5). Maks 50.</div>
+        </div>
+        <div class="col">
+          <label for="buttons">Jumlah tombol/fitur (menu, WA, beli)</label>
+          <input id="buttons" name="buttons" type="number" min="1" max="20" value="3" required>
+        </div>
+      </div>
+
+      <div class="row" style="margin-bottom:10px">
+        <div class="col">
+          <label for="phone">Nomor Telepon / WhatsApp</label>
+          <input id="phone" name="phone" type="tel" placeholder="Contoh: 0812xxxx" required>
+        </div>
+        <div class="col small">
+          <label for="branch">Cabang Penggunaan (opsional)</label>
+          <input id="branch" name="branch" type="text" placeholder="Cabang Liviaa/Tiaraaa">
+        </div>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label>Harga paket</label>
+        <div class="prices" role="radiogroup" aria-label="Harga paket">
+          <label class="price-btn"><input type="radio" name="price" value="50000" checked>50k</label>
+          <label class="price-btn"><input type="radio" name="price" value="80000">80k</label>
+          <label class="price-btn"><input type="radio" name="price" value="100000">100k</label>
+        </div>
+        <div class="muted-note">Harga per paket (IDR). Pilih salah satu.</div>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label for="desc">Isi Deskripsi (keterangan yang mau ditampilkan di web)</label>
+        <textarea id="desc" name="desc" placeholder="Tulis deskripsi singkat tentang usaha (produk, jam buka, promosi)..."></textarea>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label for="minDays">Minimal hari kerja pengerjaan</label>
+        <select id="minDays" name="minDays" required>
+          <option value="1">1 hari kerja</option>
+          <option value="2">2 hari kerja</option>
+          <option value="3" selected>3 hari kerja</option>
+          <option value="5">5 hari kerja</option>
+          <option value="7">7 hari kerja</option>
+        </select>
+        <div class="muted-note">Estimasi minimal hari kerja untuk menyelesaikan paket.</div>
+      </div>
+
+      <div class="checkbox">
+        <input id="agreeContact" name="agreeContact" type="checkbox" required>
+        <label for="agreeContact" style="font-size:14px;color:#0b1220;line-height:1.2">
+          Saya setuju dihubungi oleh tim Toko Web Kita maksimal dalam <strong>5 (lima)</strong> hari kerja untuk konfirmasi data & tanda tangan formulir.
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <input id="agreeData" name="agreeData" type="checkbox" required>
+        <label for="agreeData" style="font-size:14px;color:#0b1220;line-height:1.2">
+          Saya menyetujui bahwa data yang dikirim dapat disimpan & digunakan untuk keperluan promosi dan kerja sama oleh Toko Web Kita.
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Pesan Sekarang</button>
+        <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
+      </div>
+
+      <div id="orderSummary" class="summary" style="display:none"></div>
+
+      <div class="footer-note">This form is protected by reCAPTCHA google. — Kami akan menghubungi Anda via WA / telepon setelah submit.</div>
+    </form>
+
+    <div style="text-align:center;color:var(--muted);font-size:13px;margin-top:10px">
+      Powered by Liviaaa — versi css
+    </div>
+  </div>
+
+<script>
+  // Nomor WhatsApp tujuan (tanpa +, tanpa spasi)
+  const BUSINESS_WA_NUMBER = '13658700681'; // +1 (365) 870-0681 -> 1 365 870 0681 => 13658700681
+
+  function resetForm(){
+    document.getElementById('orderForm').reset();
+    document.getElementById('orderSummary').style.display='none';
+    document.getElementById('orderSummary').innerHTML='';
+  }
+
+  function handleSubmit(evt){
+    evt.preventDefault();
+    const f = evt.target;
+    const data = {
+      siteName: f.siteName.value.trim(),
+      city: f.city.value.trim(),
+      address: f.address.value.trim(),
+      photos: f.photos.value,
+      buttons: f.buttons.value,
+      phone: f.phone.value.trim(),
+      branch: f.branch.value.trim(),
+      price: f.price.value,
+      desc: f.desc.value.trim(),
+      minDays: f.minDays.value,
+      hasWebsite: f.hasWebsite.value || 'tidak'
+    };
+
+    // Validasi sederhana nomor pengguna (bukan nomor tujuan)
+    if(!/^[0-9+ ]{6,20}$/.test(data.phone)){
+      alert('Mohon isi nomor telepon/WA yang valid (hanya angka, + atau spasi).');
+      return;
+    }
+
+    // Format harga
+    const priceText = Number(data.price).toLocaleString('id-ID', {style:'currency', currency:'IDR'});
+
+    // Bangun pesan yang akan dikirim ke WhatsApp bisnis
+    const message = `Halo, saya mau pesan website.%0A` +
+      `Nama/Toko: ${encodeURIComponent(data.siteName)}%0A` +
+      `Kota: ${encodeURIComponent(data.city)}%0A` +
+      `Paket: ${encodeURIComponent(priceText)}%0A` +
+      `Jumlah foto: ${encodeURIComponent(data.photos)}%0A` +
+      `Jumlah tombol: ${encodeURIComponent(data.buttons)}%0A` +
+      `Estimasi minimal hari kerja: ${encodeURIComponent(data.minDays)}%0A` +
+      `Nomor pemesan: ${encodeURIComponent(data.phone)}%0A` +
+      `Deskripsi: ${encodeURIComponent(data.desc || '-')}%0A` +
+      `Alamat (opsional): ${encodeURIComponent(data.address || '-')}%0A` +
+      `---%0A(Terima kasih)`;
+
+    // Link wa.me ke nomor bisnis kamu
+    const waUrl = `https://wa.me/${BUSINESS_WA_NUMBER}?text=${message}`;
+
+    // Buka WhatsApp di tab baru / aplikasi WA
+    window.open(waUrl, '_blank');
+
+    // Tampilkan ringkasan singkat di halaman (opsional)
+    const summaryEl = document.getElementById('orderSummary');
+    summaryEl.style.display='block';
+    summaryEl.innerHTML = `
+      <strong>Pesanan dikirim ke WhatsApp kami</strong>
+      <div style="margin-top:8px">Terima kasih — form Anda telah dipersiapkan dan akan dibuka di WhatsApp.</div>
+      <div style="margin-top:8px;font-size:13px;color:var(--muted)">Jika WhatsApp tidak terbuka, klik manual: <a href="${waUrl}" target="_blank">Buka WhatsApp</a></div>
+    `;
+    return false;
+  }
+</script>
+</body>
+</html>
